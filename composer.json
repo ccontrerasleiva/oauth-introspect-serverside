@@ -1,0 +1,37 @@
+{
+	"name": "tiandgi/oauth2-introspection-server",
+	"description": "",
+	"keywords": "",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Cristian Contreras",
+			"email": "ccontrerasl@tiandgi.com"
+		}
+	],
+	"require": {
+		"php": "^7.0",
+		"guzzlehttp/guzzle": "~6.0",
+		"ipunkt/laravel-package-manager": "^1.0",
+		"laravel/passport": "~1.0|~2.0|~3.0|~4.0|~5.0|~6.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Tiandgi\\OAuthIntrospection\\": "src/"
+		}
+	},
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"optimize-autoloader": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Tiandgi\\OAuthIntrospection\\Providers\\OAuthIntrospectionServiceProvider"
+			]
+		}
+	}
+}
