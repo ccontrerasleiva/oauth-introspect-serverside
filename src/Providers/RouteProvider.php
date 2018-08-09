@@ -2,25 +2,12 @@
 
 namespace Tiandgi\OAuthIntrospection\Providers;
 
-use Illuminate\Contracts\Routing\Registrar as Router;
+use Ipunkt\Laravel\PackageManager\Providers\RouteServiceProvider;
 
-class RouteProvider{
-    protected $router;
-    
-    public function __construct(Router $router)
-    {
-        $this->router = $router;
-    }
-    
-    public function all()
-    {
-        $this->forValidToken();
-    }
-    
-    private function forValidToken(){
-        $router->post('/oauth/validToken', [
-                'uses' => 'IntrospectionController@validToken',
-            ]);
-    }
+class RouteProvider extends RouteServiceProvider
+{
+	protected $packagePath = __DIR__ . '/../../';
+	protected $routesNamespace = '\Tiandgi\OAuthIntrospection\Http\Controllers';
+	protected $routesMiddleware = null;
+	protected $routesFile = 'routes/web.php';
 }
-
